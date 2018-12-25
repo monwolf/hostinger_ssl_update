@@ -1,0 +1,3 @@
+pyyaml
+mechanize==0.2.5
+beautifulsoup

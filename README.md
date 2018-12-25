@@ -24,6 +24,13 @@ First of all we need python 2.6 or greater and pip installed. After that we shou
 pip install -r requirements.txt
 ```  
 
+If you have python 2.6: 
+
+```
+pip install -r requirements26.txt
+```  
+
+
 The configuration of the script is under the file `.env.yml`, we provide an example in the file `.env.example.yml`
 
 ```

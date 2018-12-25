@@ -1,7 +1,14 @@
 import mechanize
 import cookielib
 import urlparse
-from bs4 import BeautifulSoup
+import sys
+
+if sys.version_info >= (2, 7):
+    from bs4 import BeautifulSoup
+    bs4 = True
+else:
+    from BeautifulSoup import BeautifulSoup
+    bs4 = False
 
 
 class Hostinger(object):
@@ -51,9 +58,15 @@ class Hostinger(object):
         self.br.submit()
         r = self.br.response()
 
-        soup = BeautifulSoup(r.read(), 'html5lib')
+        if bs4:
+            soup = BeautifulSoup(r.read(), 'html5lib')
+        else:
+            soup = BeautifulSoup(r.read())
         try:
-            soup.find_all(self._tag_test_login, {'class': self._class_test_login})[0]
+            if bs4:
+                soup.find_all(self._tag_test_login, {'class': self._class_test_login})[0]
+            else:
+                soup.findAll({self._tag_test_login: True, 'class': self._class_test_login})[0]
         except Exception:
             raise Exception("Login Failed")
         url = urlparse.urlparse(r.geturl())
