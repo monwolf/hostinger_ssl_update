@@ -1,0 +1,5 @@
+venv/
+.env.yml
+.idea/
+*.pyc
+*.pyo

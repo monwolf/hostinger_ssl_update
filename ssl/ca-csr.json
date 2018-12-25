@@ -1,0 +1,18 @@
+{
+    "CN": "bitsdelocos.root.local",
+    "hosts": [
+        "bitsdelocos.local",
+        "www.bitsdelocos.local"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 4096
+    },
+    "names": [
+        {
+            "C": "ES",
+            "ST": "XX",
+            "L": "Intranet"
+        }
+    ]
+}
